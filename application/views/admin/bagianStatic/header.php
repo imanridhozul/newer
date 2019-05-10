@@ -10,10 +10,10 @@
 		</div>
 		<ul class="nav navbar-top-links navbar-right">
 			<li>
-				<span class="m-r-sm text-muted welcome-message"><?php echo $this->session->userdata('nama') ?></span>
+				<span class="m-r-sm text-muted welcome-message">ddddddd</span>
 			</li>
 			<li>
-				<a href="<?php echo base_url(); ?>/Auth/logout">
+				<a href="<?php echo base_url(); ?>Auth/logout">
 					<i class="fa fa-sign-out"></i> Log out
 				</a>
 			</li>

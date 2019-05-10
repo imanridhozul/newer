@@ -5,13 +5,13 @@
 		{
 			parent::__construct();
 		}
-		function cekLogin1($nama,$pass)
+		function cekLoginAdmin($id,$pass)
         {
-			 return $this->db->query("select * from admins where username='$nama' and password='$pass'")->result();
+			 return $this->db->query("select * from admin where nama='$id' and password='$pass'")->result();
 		}
-		function cekLoginPeneliti($nidn,$idsinta)
+		function cekLoginUser($id,$pass)
         {
-			 return $this->db->query("select * from peneliti where nidn='$nidn' and sinta_id='$idsinta'")->result();
+			 return $this->db->query("select * from user where nama='$id' and password='$pass'")->result();
 		}
 }
 

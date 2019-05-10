@@ -5,22 +5,18 @@ class Admin extends CI_Controller
 	{
 		parent::__construct();
 		$this->load->model('M_ad');
-		// if ($this->session->userdata('login_status') != TRUE) {
-		// 	redirect('Auth');
-		// }
+		if ($this->session->userdata('login_status') != TRUE) {
+			redirect('Auth');
+		}
 	}
 	public function index()
 	{
 
-		$data['title'] = 'Beranda Admin Simlim';
-		$data['jpenelitian'] = $this->M_ad->getJumlahPenelitian();
-		$data['jpengabdian'] = $this->M_ad->getPengabdian();
-		$data['jpeneliti'] = $this->M_ad->getPeneliti();
+		$data['title'] = 'Beranda Admin';
 		$this->load->view('admin/bagianStatic/v_head', $data);
 		$this->load->view('admin/bagianStatic/v_sidebar');
 		$this->load->view('admin/v_homeAdmin');
-	}
-	
+	}	
 	public function deletePeneliti($id)
 	{
 		echo $this->M_ad->deletePeneliti($id);

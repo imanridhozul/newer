@@ -22,7 +22,7 @@
                 </div>
             </li>            
             <li>
-                <a href="<?php echo base_url(); ?>admin"><i class="fa fa-th-large"></i> <span class="nav-label">Dashboard</span></a>
+                <a href="<?php echo base_url(); ?>User"><i class="fa fa-th-large"></i> <span class="nav-label">Dashboard</span></a>
             </li>          
             <li>
                 <a href="#"><i class="fa fa-th-large"></i> <span class="nav-label">Program Usulan</span><span class="fa arrow"></span></a>

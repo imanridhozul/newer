@@ -8,9 +8,9 @@ class Auth extends CI_Controller
 	}
 	public function index()
 	{
-		$data['title'] = 'Simlimtabmas';
+		$data['title'] = 'Login Admin';
 		$this->load->view('login');
-		$this->load->view('admin/bagianStatic/v_head');
+		$this->load->view('admin/bagianStatic/v_head',$data);
 	}
 	public function login()
 	{
@@ -35,11 +35,10 @@ class Auth extends CI_Controller
 				  </div>');
 			echo "success";
 		}
-
-		$result = $this->ModelAuth->cekLoginAdmin($id, $pass);
-		if ($result) {
+		$result1 = $this->ModelAuth->cekLoginAdmin($id, $pass);
+		if ($result1) {
 			$sess_array = array();
-			foreach ($result as $row) {
+			foreach ($result1 as $row) {
 				//create the session
 				$sess_array = array(
 					'nama' => $row->nama,
@@ -57,7 +56,7 @@ class Auth extends CI_Controller
 		  echo "successAdmin";
 			
 		}
-		if (!$result) {
+		if (!$result && !$result1) {
 			echo "gagagl";
 			// $this->session->set_flashdata('notif','password salah');
 			// redirect('Auth','refresh');

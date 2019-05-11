@@ -17,14 +17,29 @@ class Admin extends CI_Controller
 		$this->load->view('admin/bagianStatic/v_sidebar');
 		$this->load->view('admin/v_homeAdmin');
 	}	
-	public function deletePeneliti($id)
+	public function step()
 	{
-		echo $this->M_ad->deletePeneliti($id);
-		$this->session->set_flashdata('msg', '<div id="success-alert" class="alert alert-success alert-dismissable">
-			<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-			 <center>Data berhasil dihapus</center>
-		  </div>');
-		redirect('Admin/dataPeneliti');
+
+		$data['title'] = 'step';
+		$this->load->view('admin/bagianStatic/v_head', $data);
+		$this->load->view('admin/bagianStatic/v_sidebar');
+		$this->load->view('admin/step');
+	}	
+	public function addData()
+	{
+		$data['foto'] = $this->input->post('dk');
+		// $data['foto'] = "data/foto/".$_FILES["dokumen"]['name'];	
+		// move_uploaded_file($_FILES["dokumen"]["tmp_name"], "data/proposal/" . $_FILES["dokumen"]["name"]);		
+		echo $data['foto'];
+		
+	}
+	public function ad()
+	{
+		// $data['foto'] = $this->input->post('dokumen');
+		$data['foto'] = "data/foto/".$_FILES["dokumen"]['name'];	
+		move_uploaded_file($_FILES["dokumen"]["tmp_name"], "data/proposal/" . $_FILES["dokumen"]["name"]);		
+		echo $data['foto'];
+		
 	}
 	
 }
